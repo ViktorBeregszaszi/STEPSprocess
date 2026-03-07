@@ -154,6 +154,17 @@
     letter-spacing: 0.3em;
     color: var(--red);
     text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .wordmark-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 0.10em;
+    color: var(--mid);
+    text-transform: none;
   }
 
   .hero-headline {
@@ -209,6 +220,7 @@
   }
   .contact-line a { color: var(--light); text-decoration: none; }
   .contact-line a:hover { color: var(--red); }
+  .contact-email { color: var(--light); font-size: 13px; letter-spacing: 0.05em; }
 
   .hero-right {
     background: var(--sand);
@@ -238,7 +250,7 @@
 
   .problem-num {
     font-family: 'Syne', sans-serif;
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 800;
     color: var(--red);
     padding-top: 3px;
@@ -250,14 +262,14 @@
     display: block;
     font-family: 'Syne', sans-serif;
     font-weight: 600;
-    font-size: 15px;
+    font-size: clamp(15px, 1.2vw, 18px);
     color: var(--black);
     margin-bottom: 4px;
   }
 
   .problem-text p {
-    font-size: 14px;
-    color: var(--mid);
+    font-size: clamp(14px, 1vw, 16px);
+    color: #3a3835;
     line-height: 1.6;
   }
 
@@ -750,13 +762,13 @@
         <em>Consistent execution</em><br>doesn't.
       </h1>
       <p class="hero-sub">
-        STEPS is a structured team learning system that surfaces how differently your people interpret the same procedure — before misalignment becomes a failure.
+        STEPS is a structured training system that surfaces how differently your people interpret the same procedure — and builds the shared understanding to fix it.
       </p>
     </div>
     <div class="hero-cta">
-      <a href="#diagnostic" class="btn-primary">Book a Free Diagnostic Session</a>
+      <a href="mailto:hello@stepsprocess.com" class="btn-primary">Book a Free Execution Risk Review</a>
       <span class="contact-line">
-        <a href="mailto:your@email.com">your@email.com</a> &nbsp;·&nbsp; +45 000 000 00
+        <span class="contact-email">hello@stepsprocess.com</span>
       </span>
     </div>
   </div>
@@ -775,8 +787,8 @@
     <div class="problem-item">
       <span class="problem-num">02</span>
       <div class="problem-text">
-        <strong>Rare situations never rehearsed together</strong>
-        <p>High-stakes, low-frequency scenarios are the ones that cause failures. They're also the ones teams never practice.</p>
+        <strong>High-stakes situations practiced only when it's too late</strong>
+        <p>High-stakes, low-frequency scenarios are the ones that cause failures. They're also the ones teams are least prepared for.</p>
       </div>
     </div>
 
@@ -792,7 +804,7 @@
       <span class="problem-num">04</span>
       <div class="problem-text">
         <strong>Documentation and practice diverge</strong>
-        <p>Over time, what people actually do quietly departs from what the procedure says they should do.</p>
+        <p>Over time, what people actually do gradually departs from what the procedure says they should do.</p>
       </div>
     </div>
   </div>
@@ -827,12 +839,12 @@
 <section class="what">
   <div>
     <p class="section-label">What STEPS Is</p>
-    <h2 class="section-title">A structured team session that makes hidden gaps visible</h2>
+    <h2 class="section-title">A procedure training system your team can run on demand</h2>
     <p class="section-body">
-      STEPS is a scenario-based tabletop session — built around your actual procedures, your roles, and your real operational context. Teams work through procedure-critical situations together, surfacing where their understanding differs.
+      STEPS is a custom-built training tool — designed around your actual procedures, your roles, and your operational context. We build it with you. Your facilitators run it, indefinitely.
     </p>
     <p class="section-body">
-      It is not a lecture. It is not e-learning. It is a facilitated experience that creates the kind of shared understanding that documentation alone cannot.
+      It is not a lecture. It is not e-learning. It is a facilitated scenario experience that creates shared understanding across roles — the kind that documentation alone cannot produce.
     </p>
     <p class="section-body">
       Each session generates data. A dashboard highlights recurring knowledge gaps and alignment trends — giving you evidence for targeted reinforcement, audit documentation, and SOP refinement.
@@ -873,8 +885,8 @@
         <svg viewBox="0 0 16 16"><path d="M8 1l2 5h5l-4 3 1.5 5L8 11l-4.5 3L5 9 1 6h5z"/></svg>
       </div>
       <div class="feature-text">
-        <strong>Rehearses escalation decisions</strong>
-        <p>High-stakes, low-frequency situations are practiced before they happen.</p>
+        <strong>Practises critical response decisions</strong>
+        <p>High-stakes, low-frequency situations are rehearsed before they happen — not after.</p>
       </div>
     </div>
     <div class="feature-row">
@@ -969,8 +981,8 @@
       </div>
       <div class="step-card">
         <span class="step-number">02</span>
-        <h3 class="step-title">Build the Learning Tool</h3>
-        <p class="step-body">A custom STEPS session is designed around your procedures and verified with your team before rollout. Content reflects your real operational context — not generic scenarios.</p>
+        <h3 class="step-title">Build the Training Tool</h3>
+        <p class="step-body">A custom STEPS tool is designed around your procedures and verified with your team before rollout. Your organisation owns it. Your facilitators run it. Content reflects your real operational context — not generic scenarios.</p>
       </div>
       <div class="step-card">
         <span class="step-number">03</span>
@@ -987,7 +999,7 @@
 <section class="results">
   <div class="results-header">
     <p class="section-label" style="text-align:center;">Proven in the Field</p>
-    <h2 class="section-title" style="text-align:center; max-width: 500px; margin: 0 auto;">Deployed across 450 technicians in four countries</h2>
+    <h2 class="section-title" style="text-align:center; max-width: 600px; margin: 0 auto;">Built and deployed across 450+ technicians in four countries</h2>
   </div>
 
   <div class="stats-row">
@@ -1005,18 +1017,11 @@
     </div>
     <div class="stat-box">
       <span class="stat-num">NPS<br><span style="font-size:36px;">+70</span></span>
-      <p class="stat-label">Internal score — strongly preferred over lecture-based formats</p>
+      <p class="stat-label">Consistently preferred over lecture-based formats by participants</p>
     </div>
   </div>
 
-  <div class="quote-block">
-    <span class="quote-mark">"</span>
-    <p class="quote-text">We chose STEPS because it was the most effective and scalable way to address complacency and uneven understanding across teams.</p>
-    <p class="quote-attribution">— Head of Site, leading offshore wind developer</p>
-    <div class="quote-context">
-      Sessions surfaced interpretation gaps<br>not visible in the official SOP.<br>Documentation was refined as a result.
-    </div>
-  </div>
+</section>
 </section>
 
 <!-- ══════════════════════════════════════
@@ -1028,7 +1033,7 @@
   <div class="team-inner">
     <div>
       <p class="section-label">Who We Are</p>
-      <h2 class="section-title">20+ years designing learning systems for safety-critical environments</h2>
+      <h2 class="section-title">Built from the inside. Deployed at scale.</h2>
       <p class="section-body">
         We are two strategic design consultants who built and validated STEPS from the inside — embedded in one of the world's most complex offshore operations. We know what procedural misalignment costs because we've seen it at scale.
       </p>
@@ -1064,9 +1069,9 @@
           </div>
         </div>
         <div class="bio-info">
-          <p class="bio-name">Viktor Bengtsson</p>
-          <p class="bio-role">Senior Design &amp; Learning Consultant</p>
-          <p class="bio-text">20+ years in strategic learning design across safety-critical industries. Led the original STEPS deployment across offshore operations in four countries.</p>
+          <p class="bio-name">Viktor Beregszaszi</p>
+          <p class="bio-role">Learning Design &amp; Gamification Strategist</p>
+          <p class="bio-text">Designs gamified learning systems for safety-critical industries. 1500+ employees trained. Certified change practitioner and international speaker on gamification at scale.</p>
         </div>
       </div>
 
@@ -1083,9 +1088,9 @@
           </div>
         </div>
         <div class="bio-info">
-          <p class="bio-name">Tobias Bragger Jensen</p>
-          <p class="bio-role">Lead Design Strategist</p>
-          <p class="bio-text">Specialist in operational learning systems and large-scale facilitation. Brings deep expertise in translating complex procedures into engaging, effective team experiences.</p>
+          <p class="bio-name">Tobias Juul Brøgger-Jensen</p>
+          <p class="bio-role">UX &amp; Service Design Strategist</p>
+          <p class="bio-text">8+ years designing complex operational systems for large organisations. Specialises in translating procedures and processes into clear, human-centred experiences that stick.</p>
         </div>
       </div>
 
@@ -1099,9 +1104,9 @@
 <section class="diagnostic" id="diagnostic">
   <div class="diagnostic-inner">
     <div>
-      <h2 class="diagnostic-title">Start with a free Operational Readiness Diagnostic</h2>
-      <p class="diagnostic-sub">A 45-minute session with us. No commitment. We identify where alignment risk is highest in your organisation and show you exactly where STEPS would make a difference.</p>
-      <a href="mailto:your@email.com" class="btn-white">Book Your Diagnostic</a>
+      <h2 class="diagnostic-title">Start with a free Execution Risk Review</h2>
+      <p class="diagnostic-sub">A 45-minute session with us. No commitment. We map your highest-risk procedures together and show you exactly where STEPS would make a difference.</p>
+      <a href="mailto:hello@stepsprocess.com" class="btn-white">Book Your Execution Risk Review</a>
     </div>
 
     <div class="diagnostic-right">
@@ -1132,10 +1137,12 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-brand">STEPS</div>
+  <div class="footer-brand">
+    STEPS
+    <span style="display:block; font-family:'DM Sans',sans-serif; font-weight:300; font-size:11px; letter-spacing:0.08em; color:var(--mid); margin-top:4px; text-transform:none;">Closing the gap between procedure and practice</span>
+  </div>
   <div class="footer-contact">
-    <a href="mailto:your@email.com">your@email.com</a>
-    <a href="tel:+4500000000">+45 000 000 00</a>
+    <a href="mailto:hello@stepsprocess.com">hello@stepsprocess.com</a>
   </div>
 </footer>
 
