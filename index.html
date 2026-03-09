@@ -733,7 +733,9 @@
     .hero, .what, .team-inner, .diagnostic-inner { grid-template-columns: 1fr; }
     .hero-left::after { display: none; }
     .hero-left, .hero-right, .what, .how, .results,
-    .team, .diagnostic, .in-action { padding: 64px 32px; }
+    .team, .diagnostic { padding: 64px 32px; }
+    .in-action { padding: 0 0 64px; }
+    .in-action-label { padding: 0 32px; }
     .how-header { flex-direction: column; align-items: flex-start; gap: 16px; }
     .how-desc { text-align: left; }
     .steps-grid, .stats-row { grid-template-columns: 1fr; }
@@ -743,6 +745,11 @@
     .footer-contact { text-align: center; }
     .bio-card { grid-template-columns: 80px 1fr; }
     .bio-photo { width: 80px; }
+    /* Stack the what-section image pair on mobile */
+    .what-img-pair { grid-template-columns: 1fr !important; }
+    .what-img-pair img { height: 220px !important; }
+    /* Scroll strip on mobile */
+    #scroll-strip { padding: 0 32px !important; }
   }
 
   @media (max-width: 1300px) and (min-width: 901px) {
@@ -777,9 +784,9 @@
       </p>
     </div>
     <div class="hero-cta">
-      <a href="/cdn-cgi/l/email-protection#751d1019191a35060110050605071a161006065b161a18" class="btn-primary">Book a Free Execution Risk Review</a>
+      <a href="mailto:hello@stepsprocess.com" class="btn-primary">Book a Free Execution Risk Review</a>
       <span class="contact-line">
-        <span class="contact-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3c54595050537c4f48594c4f4c4e535f594f4f125f5351">[email&#160;protected]</a></span>
+        <span class="contact-email">hello@stepsprocess.com</span>
       </span>
     </div>
   </div>
@@ -911,9 +918,13 @@
   </div>
 
   <!-- Full-width image pair below both columns, perfectly aligned -->
-  <div style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 3px;">
-    <img src="images/session-focus.jpg" style="width:100%; height:280px; object-fit:cover; object-position:center center; display:block;" alt="Session in progress">
-    <img src="images/session-hands.jpg" style="width:100%; height:280px; object-fit:cover; object-position:center center; display:block;" alt="Hands on the board">
+  <div class="what-img-pair" style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 3px;">
+    <a href="images/session-focus.jpg" target="_blank" style="display:block; overflow:hidden;">
+      <img src="images/session-focus.jpg" style="width:100%; height:280px; object-fit:cover; object-position:center center; display:block; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" alt="Session in progress">
+    </a>
+    <a href="images/session-hands.jpg" target="_blank" style="display:block; overflow:hidden;">
+      <img src="images/session-hands.jpg" style="width:100%; height:280px; object-fit:cover; object-position:center center; display:block; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" alt="Hands on the board">
+    </a>
   </div>
 </section>
 
@@ -924,14 +935,36 @@
 <div class="in-action" style="padding-top: 0;">
   <p class="in-action-label">STEPS in action</p>
 
-  <!-- HORIZONTAL SCROLL STRIP — no cropping, full images visible -->
-  <div style="display:flex; gap:3px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none;">
-    <img src="images/session-group.jpg" style="flex-shrink:0; max-height:420px; width:auto; scroll-snap-align:start; display:block;" alt="Team session in progress">
-    <img src="images/session-facilitator.jpg" style="flex-shrink:0; max-height:420px; width:auto; scroll-snap-align:start; display:block;" alt="Facilitator in action">
-    <img src="images/session-focus.jpg" style="flex-shrink:0; max-height:420px; width:auto; scroll-snap-align:start; display:block;" alt="Team focused on the board">
+  <!-- HORIZONTAL SCROLL STRIP — constrained width, mouse drag + touch -->
+  <div id="scroll-strip" style="display:flex; gap:3px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; cursor:grab; max-width:1200px; margin:0 auto; padding: 0 64px; box-sizing:border-box;">
+    <img src="images/session-group.jpg" style="flex-shrink:0; max-height:420px; width:auto; scroll-snap-align:start; display:block; pointer-events:none;" alt="Team session in progress">
+    <img src="images/session-facilitator.jpg" style="flex-shrink:0; max-height:420px; width:auto; scroll-snap-align:start; display:block; pointer-events:none;" alt="Facilitator in action">
+    <img src="images/session-focus.jpg" style="flex-shrink:0; max-height:420px; width:auto; scroll-snap-align:start; display:block; pointer-events:none;" alt="Team focused on the board">
   </div>
-  <p style="font-size:12px; color:var(--mid); text-align:right; margin-top:8px; font-style:italic; padding: 0 64px;">← scroll to see more</p>
+  <p style="font-size:12px; color:var(--mid); text-align:right; margin-top:8px; font-style:italic; padding:0 64px; max-width:1200px; margin-left:auto; margin-right:auto;">← drag or swipe to see more</p>
 </div>
+
+<script>
+(function(){
+  var el = document.getElementById('scroll-strip');
+  if (!el) return;
+  var isDown = false, startX, scrollLeft;
+  el.addEventListener('mousedown', function(e){
+    isDown = true;
+    el.style.cursor = 'grabbing';
+    startX = e.pageX - el.offsetLeft;
+    scrollLeft = el.scrollLeft;
+  });
+  el.addEventListener('mouseleave', function(){ isDown = false; el.style.cursor = 'grab'; });
+  el.addEventListener('mouseup', function(){ isDown = false; el.style.cursor = 'grab'; });
+  el.addEventListener('mousemove', function(e){
+    if (!isDown) return;
+    e.preventDefault();
+    var x = e.pageX - el.offsetLeft;
+    el.scrollLeft = scrollLeft - (x - startX) * 1.5;
+  });
+})();
+</script>
 
 <!-- ══════════════════════════════════════
      HOW IT WORKS
@@ -1033,6 +1066,10 @@
           <p class="bio-name">Viktor Beregszaszi</p>
           <p class="bio-role">Learning Design &amp; Gamification Strategist</p>
           <p class="bio-text">Designs gamified learning systems for safety-critical industries. 1500+ employees trained. Certified change practitioner and international speaker on gamification at scale.</p>
+          <a href="https://www.linkedin.com/in/viktorberegszaszi/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; margin-top:12px; font-size:12px; color:var(--mid); text-decoration:none; letter-spacing:0.05em; transition:color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--mid)'">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
         </div>
       </div>
 
@@ -1048,6 +1085,10 @@
           <p class="bio-name">Tobias Juul Brøgger-Jensen</p>
           <p class="bio-role">UX &amp; Service Design Strategist</p>
           <p class="bio-text">8+ years designing complex operational systems for large organisations. Specialises in translating procedures and processes into clear, human-centred experiences that stick.</p>
+          <a href="https://www.linkedin.com/in/tobias-juul-broegger-jensen/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; margin-top:12px; font-size:12px; color:var(--mid); text-decoration:none; letter-spacing:0.05em; transition:color 0.2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--mid)'">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
         </div>
       </div>
 
@@ -1063,7 +1104,7 @@
     <div>
       <h2 class="diagnostic-title">Start with a free Execution Risk Review</h2>
       <p class="diagnostic-sub">A 45-minute session with us. No commitment. We map your highest-risk procedures together and show you exactly where STEPS would make a difference.</p>
-      <a href="/cdn-cgi/l/email-protection#2d45484141426d5e59485d5e5d5f424e485e5e034e4240" class="btn-white">Book Your Execution Risk Review</a>
+      <a href="mailto:hello@stepsprocess.com" class="btn-white">Book Your Execution Risk Review</a>
     </div>
 
     <div class="diagnostic-right">
@@ -1098,5 +1139,10 @@
     STEPS
     <span style="display:block; font-family:'DM Sans',sans-serif; font-weight:300; font-size:11px; letter-spacing:0.08em; color:var(--mid); margin-top:4px; text-transform:none;">Closing the gap between procedure and practice</span>
   </div>
-  <div class="footer-contact">
-    <a href="/cdn-cgi/l/email-protection#08606d646467487b7c6d787b787a676b6d7b7b266b6765"><span class="__cf
+    <div class="footer-contact">
+    <a href="mailto:hello@stepsprocess.com">hello@stepsprocess.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
