@@ -732,6 +732,14 @@
   .hero-left > *:nth-child(3) { animation-delay: 0.4s; }
 
   /* ── RESPONSIVE ── */
+  /* Photo grid 2x2 mobile */
+  @media (max-width: 900px) {
+    .photo-grid-2x2 { grid-template-columns: 1fr !important; }
+    .photo-grid-2x2 a img { height: 240px !important; }
+    .who-for-section { padding: 64px 32px !important; }
+    .who-for-inner { grid-template-columns: 1fr !important; gap: 40px !important; }
+  }
+
   @media (max-width: 900px) {
     .hero, .what, .team-inner, .diagnostic-inner { grid-template-columns: 1fr; }
     .hero-left::after { display: none; }
@@ -776,7 +784,7 @@
      ══════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-left">
-    <div class="wordmark"><span style="display:inline;">STEPS<sup style="font-size:9px; letter-spacing:0; vertical-align:super; margin-left:2px; font-weight:800;">™</sup></span></div>
+    <div class="wordmark"><span style="display:inline;">STEPS<span style="font-size:8px; letter-spacing:0.05em; vertical-align:super; margin-left:3px; font-weight:700; text-decoration:none;">TM</span></span></div>
     <div>
       <h1 class="hero-headline">
         Your procedures<br>exist.<br>
@@ -927,11 +935,11 @@
      IN ACTION — 2x2 PHOTO GRID
      ══════════════════════════════════════ -->
 <div style="padding: 0 64px 100px; max-width:1200px; margin:0 auto;">
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:3px;">
-    <img src="images/session-focus.jpg" style="width:100%; height:300px; object-fit:cover; object-position:center center; display:block;" alt="Session in progress">
-    <img src="images/session-hands.jpg" style="width:100%; height:300px; object-fit:cover; object-position:center center; display:block;" alt="Hands on the board">
-    <img src="images/session-group.jpg" style="width:100%; height:300px; object-fit:cover; object-position:center top; display:block;" alt="Team session in progress">
-    <img src="images/session-facilitator.jpg" style="width:100%; height:300px; object-fit:cover; object-position:center top; display:block;" alt="Facilitator in action">
+  <div class="photo-grid-2x2" style="display:grid; grid-template-columns:1fr 1fr; gap:3px;">
+    <a href="images/session-focus.jpg" target="_blank" style="display:block; overflow:hidden;"><img src="images/session-focus.jpg" style="width:100%; height:300px; object-fit:cover; object-position:center center; display:block; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" alt="Session in progress"></a>
+    <a href="images/session-hands.jpg" target="_blank" style="display:block; overflow:hidden;"><img src="images/session-hands.jpg" style="width:100%; height:300px; object-fit:cover; object-position:center center; display:block; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" alt="Hands on the board"></a>
+    <a href="images/session-group.jpg" target="_blank" style="display:block; overflow:hidden;"><img src="images/session-group.jpg" style="width:100%; height:300px; object-fit:cover; object-position:center top; display:block; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" alt="Team session in progress"></a>
+    <a href="images/session-facilitator.jpg" target="_blank" style="display:block; overflow:hidden;"><img src="images/session-facilitator.jpg" style="width:100%; height:300px; object-fit:cover; object-position:center top; display:block; transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" alt="Facilitator in action"></a>
   </div>
 </div>
 
@@ -1070,8 +1078,8 @@
 <!-- ══════════════════════════════════════
      WHO THIS IS FOR
      ══════════════════════════════════════ -->
-<section style="padding: 100px 64px; background: var(--black);">
-  <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;">
+<section class="who-for-section" style="padding: 100px 64px; background: var(--black);">
+  <div class="who-for-inner" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;">
     <div>
       <p class="section-label">Who This Is For</p>
       <h2 class="section-title" style="color:var(--white);">Built for industries where precision is non-negotiable</h2>
@@ -1145,9 +1153,10 @@
 <!-- FOOTER -->
 <!-- FOOTER -->
 <!-- FOOTER -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-brand">
-    STEPS<sup style="font-size:8px; letter-spacing:0; vertical-align:super; margin-left:2px;">™</sup>
+    STEPS<span style="font-size:7px; letter-spacing:0.05em; vertical-align:super; margin-left:3px; font-weight:700; text-decoration:none;">TM</span>
     <span style="display:block; font-family:'DM Sans',sans-serif; font-weight:300; font-size:11px; letter-spacing:0.08em; color:var(--mid); margin-top:4px; text-transform:none;">Closing the gap between procedure and practice</span>
   </div>
   <div class="footer-contact">
