@@ -225,7 +225,7 @@
   .contact-email { color: var(--light); font-size: 13px; letter-spacing: 0.05em; }
 
   .hero-right {
-    background: var(--sand);
+    background: var(--white);
     padding: 72px 64px;
     display: flex;
     flex-direction: column;
@@ -424,7 +424,7 @@
   }
 
   .step-card {
-    background: var(--white);
+    background: var(--sand);
     padding: 40px 36px;
     position: relative;
     overflow: hidden;
@@ -557,7 +557,7 @@
   /* ── TEAM ── */
   .team {
     padding: 100px 64px;
-    background: var(--sand);
+    background: var(--black);
   }
 
   .team-inner {
@@ -576,7 +576,7 @@
   }
 
   .bio-card {
-    background: var(--white);
+    background: #1e1c1a;
     padding: 0;
     border-left: 3px solid var(--red);
     display: grid;
@@ -597,7 +597,7 @@
     font-family: 'Syne', sans-serif;
     font-weight: 700;
     font-size: 17px;
-    color: var(--black);
+    color: var(--white);
     margin-bottom: 4px;
   }
 
@@ -612,7 +612,7 @@
 
   .bio-text {
     font-size: 13px;
-    color: #3a3835;
+    color: var(--light);
     line-height: 1.7;
   }
 
@@ -634,10 +634,11 @@
   .diagnostic-title {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: clamp(32px, 4vw, 52px);
+    font-size: clamp(32px, 4vw, 56px);
     color: var(--white);
     line-height: 1.05;
     margin-bottom: 20px;
+    white-space: nowrap;
   }
 
   .diagnostic-sub {
@@ -957,24 +958,24 @@
         <p class="section-label" style="color: var(--red);">How It Works</p>
         <h2 class="how-title">We build it around<br>your operational reality</h2>
       </div>
-      <p class="how-desc">Every STEPS system is tailored to your procedures, your roles, and your risk profile — in collaboration with your subject matter experts.</p>
+      <p class="how-desc">Every STEPS system is built from your procedures, your roles, and real incident data from your industry — in close collaboration with your subject matter experts.</p>
     </div>
 
     <div class="steps-grid">
       <div class="step-card">
         <span class="step-number">01</span>
         <h3 class="step-title">We go deep into your operation</h3>
-        <p class="step-body">We work alongside your subject matter experts to map your procedures, surface local anecdotes and antipatterns, and pinpoint exactly where interpretation risk is highest.</p>
+        <p class="step-body">We interview your teams and process experts to understand which processes are critical to reinforce, and which behaviours to change. That research gives the foundation for your STEPS training scenarios — so your teams will learn by working through the exact decisions they could actually face.</p>
       </div>
       <div class="step-card">
         <span class="step-number">02</span>
         <h3 class="step-title">We craft every scenario around your risk profile</h3>
-        <p class="step-body">A bespoke STEPS system is designed around your exact procedures and verified with your team before a single session runs. Your organisation owns it permanently. Your facilitators run it. Every scenario reflects your real operational context — not generic training material.</p>
+        <p class="step-body">A bespoke STEPS system is designed around your exact procedures and verified with your subject matter experts for full operational accuracy. Your organisation owns it permanently to run it on demand.</p>
       </div>
       <div class="step-card">
         <span class="step-number">03</span>
         <h3 class="step-title">We bring your facilitators to full capability</h3>
-        <p class="step-body">We personally prepare your internal facilitators, support large-scale rollout events, and stay with you through deployment. Dashboard monitoring ensures gaps are tracked and every reinforcement session is precisely targeted.</p>
+        <p class="step-body">We personally prepare your internal facilitators and support the rollout in the way that fits your organisation. As your team takes over, your dashboard captures session data providing an overview of recurring knowledge gaps that need reinforcement.</p>
       </div>
     </div>
   </div>
@@ -1020,11 +1021,11 @@
   <div class="team-inner">
     <div>
       <p class="section-label">Who We Are</p>
-      <h2 class="section-title">Built from the inside. Deployed at scale.</h2>
-      <p class="section-body">
+      <h2 class="section-title" style="color: var(--white);">Built from the inside. Deployed at scale.</h2>
+      <p class="section-body" style="color: var(--light);">
         We are two strategic design consultants who built and validated STEPS from the inside — embedded in one of the world's most complex offshore operations. We know what procedural misalignment costs because we've seen it at scale.
       </p>
-      <p class="section-body">
+      <p class="section-body" style="color: var(--light);">
         We don't sell off-the-shelf training. We design systems that fit your operational reality and leave your organisation with lasting internal capability.
       </p>
 
@@ -1080,33 +1081,33 @@
 <!-- ══════════════════════════════════════
      WHO THIS IS FOR
      ══════════════════════════════════════ -->
-<section class="who-for-section" style="padding: 100px 64px; background: var(--black);">
+<section class="who-for-section" style="padding: 100px 64px; background: var(--white);">
   <div class="who-for-inner" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;">
     <div>
       <p class="section-label">Who This Is For</p>
-      <h2 class="section-title" style="color:var(--white);">Built for industries where precision is non-negotiable</h2>
-      <p class="section-body" style="color:var(--light);">STEPS works best where the gap between what the procedure says and what people actually do carries real consequences.</p>
+      <h2 class="section-title" style="color:var(--black);">Built for industries where precision is non-negotiable</h2>
+      <p class="section-body" style="color:#3a3835;">STEPS works best where the gap between what the procedure says and what people actually do carries real consequences.</p>
     </div>
     <div style="display:flex; flex-direction:column; gap:0;">
-      <div style="display:flex; gap:16px; padding:20px 0; border-bottom:1px solid #2a2825; align-items:flex-start;">
-        <svg width="20" height="20" viewBox="0 0 20 20" style="flex-shrink:0; margin-top:2px;"><circle cx="10" cy="10" r="9" fill="#1e1c1a"/><path d="M5 10l3.5 3.5L15 7" stroke="var(--red)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div style="display:flex; gap:16px; padding:20px 0; border-bottom:1px solid #d0cbbe; align-items:flex-start;">
+        <svg width="20" height="20" viewBox="0 0 20 20" style="flex-shrink:0; margin-top:2px;"><circle cx="10" cy="10" r="9" fill="#ddd8ce"/><path d="M5 10l3.5 3.5L15 7" stroke="var(--red)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <div>
-          <strong style="font-family:'Syne',sans-serif; font-size:14px; display:block; margin-bottom:4px; color:var(--white);">High-stakes operations and costly mistakes</strong>
-          <span style="font-size:13px; color:var(--light);">Offshore energy, utilities, pharma, logistics, healthcare — anywhere a deviation from procedure has consequences beyond inconvenience.</span>
+          <strong style="font-family:'Syne',sans-serif; font-size:14px; display:block; margin-bottom:4px; color:var(--black);">High-stakes operations and costly mistakes</strong>
+          <span style="font-size:13px; color:#3a3835;">Offshore energy, utilities, pharma, logistics, healthcare — anywhere a deviation from procedure has consequences beyond inconvenience.</span>
         </div>
       </div>
-      <div style="display:flex; gap:16px; padding:20px 0; border-bottom:1px solid #2a2825; align-items:flex-start;">
-        <svg width="20" height="20" viewBox="0 0 20 20" style="flex-shrink:0; margin-top:2px;"><circle cx="10" cy="10" r="9" fill="#1e1c1a"/><path d="M5 10l3.5 3.5L15 7" stroke="var(--red)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div style="display:flex; gap:16px; padding:20px 0; border-bottom:1px solid #d0cbbe; align-items:flex-start;">
+        <svg width="20" height="20" viewBox="0 0 20 20" style="flex-shrink:0; margin-top:2px;"><circle cx="10" cy="10" r="9" fill="#ddd8ce"/><path d="M5 10l3.5 3.5L15 7" stroke="var(--red)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <div>
-          <strong style="font-family:'Syne',sans-serif; font-size:14px; display:block; margin-bottom:4px; color:var(--white);">Teams that work together physically</strong>
-          <span style="font-size:13px; color:var(--light);">Where roles are physically interdependent — one person's interpretation of a procedure directly shapes what the next person does.</span>
+          <strong style="font-family:'Syne',sans-serif; font-size:14px; display:block; margin-bottom:4px; color:var(--black);">Teams that work together physically</strong>
+          <span style="font-size:13px; color:#3a3835;">Where roles are physically interdependent — one person's interpretation of a procedure directly shapes what the next person does.</span>
         </div>
       </div>
       <div style="display:flex; gap:16px; padding:20px 0; align-items:flex-start;">
-        <svg width="20" height="20" viewBox="0 0 20 20" style="flex-shrink:0; margin-top:2px;"><circle cx="10" cy="10" r="9" fill="#1e1c1a"/><path d="M5 10l3.5 3.5L15 7" stroke="var(--red)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="20" height="20" viewBox="0 0 20 20" style="flex-shrink:0; margin-top:2px;"><circle cx="10" cy="10" r="9" fill="#ddd8ce"/><path d="M5 10l3.5 3.5L15 7" stroke="var(--red)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <div>
-          <strong style="font-family:'Syne',sans-serif; font-size:14px; display:block; margin-bottom:4px; color:var(--white);">Procedures that don't stick</strong>
-          <span style="font-size:13px; color:var(--light);">Technology, structure, resources — many things break procedures. STEPS focuses on the gap between what the process says and what each person believes it means.</span>
+          <strong style="font-family:'Syne',sans-serif; font-size:14px; display:block; margin-bottom:4px; color:var(--black);">Procedures that don't stick</strong>
+          <span style="font-size:13px; color:#3a3835;">Technology, structure, resources — many things break procedures. STEPS focuses on the gap between what the process says and what each person believes it means.</span>
           <span style="font-size:13px; color:var(--mid); display:block; margin-top:10px; font-style:italic;">Particularly effective for induction — when new employees are building their mental model of your procedures for the first time.</span>
         </div>
       </div>
