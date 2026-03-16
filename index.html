@@ -697,6 +697,87 @@
   }
   .btn-white:hover { background: var(--black); color: var(--white); }
 
+  /* ── BOOKING FORM ── */
+  .booking-form {
+    background: rgba(0,0,0,0.18);
+    padding: 40px 44px;
+  }
+
+  .booking-form .form-label {
+    display: block;
+    font-family: 'Syne', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,243,238,0.6);
+    margin-bottom: 8px;
+  }
+
+  .booking-form input,
+  .booking-form textarea {
+    display: block;
+    width: 100%;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(245,243,238,0.25);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 13px 16px;
+    margin-bottom: 20px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+
+  .booking-form input::placeholder,
+  .booking-form textarea::placeholder {
+    color: rgba(245,243,238,0.35);
+    font-style: italic;
+  }
+
+  .booking-form input:focus,
+  .booking-form textarea:focus {
+    border-color: rgba(245,243,238,0.7);
+    background: rgba(255,255,255,0.15);
+  }
+
+  .booking-form textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  .booking-form .form-submit {
+    display: inline-block;
+    width: 100%;
+    background: var(--white);
+    color: var(--red);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 18px 36px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    margin-top: 4px;
+  }
+  .booking-form .form-submit:hover { background: var(--black); color: var(--white); }
+
+  .booking-form .form-note {
+    font-size: 12px;
+    color: rgba(245,243,238,0.45);
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+  .booking-form .form-note a {
+    color: rgba(245,243,238,0.65);
+    text-decoration: underline;
+  }
+
   /* ── FOOTER ── */
   footer {
     background: var(--black);
@@ -804,10 +885,7 @@
       </p>
     </div>
     <div class="hero-cta">
-      <a href="/cdn-cgi/l/email-protection#c0a8a5acacaf80b3b4a5b0b3b0b2afa3a5b3b3eea3afad" class="btn-primary">Book a demo →</a>
-      <span class="contact-line">
-        <span class="contact-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="244c4148484b64575041545754564b474157570a474b49">[email&#160;protected]</a></span>
-      </span>
+      <a href="#diagnostic" class="btn-primary">Book a demo →</a>
     </div>
   </div>
 
@@ -1124,8 +1202,33 @@
       <h2 class="diagnostic-title">Book a demo.</h2>
       <p class="diagnostic-sub">In person. 45 minutes.</p>
       <p class="diagnostic-sub" style="margin-top: 24px;">We'll play through a live scenario together and explore where STEPS fits your operation. No preparation needed on your side.</p>
-      <a href="mailto:hello@stepsprocess.com" class="btn-white" style="margin-top: 32px;">Book a demo →</a>
     </div>
+
+    <form class="booking-form" action="https://formspree.io/f/xeerrlek" method="POST">
+
+      <label class="form-label" for="f-name">Name *</label>
+      <input type="text" id="f-name" name="name" required placeholder="Your name">
+
+      <label class="form-label" for="f-email">Email *</label>
+      <input type="email" id="f-email" name="email" required placeholder="your@company.com">
+
+      <label class="form-label" for="f-company">Company *</label>
+      <input type="text" id="f-company" name="company" required placeholder="Organisation name">
+
+      <label class="form-label" for="f-location">Office location / city <span style="opacity:0.5; font-weight:400; text-transform:none; letter-spacing:0;">(optional)</span></label>
+      <input type="text" id="f-location" name="location" placeholder="e.g. Copenhagen">
+
+      <label class="form-label" for="f-availability">When are you available? <span style="opacity:0.5; font-weight:400; text-transform:none; letter-spacing:0;">(optional)</span></label>
+      <input type="text" id="f-availability" name="availability" placeholder="Suggest 2–3 dates and times">
+
+      <label class="form-label" for="f-message">Anything else we should know? <span style="opacity:0.5; font-weight:400; text-transform:none; letter-spacing:0;">(optional)</span></label>
+      <textarea id="f-message" name="message" placeholder="Context about your operation, team size, specific challenges…"></textarea>
+
+      <button type="submit" class="form-submit">Send booking request →</button>
+
+      <p class="form-note">Just have a question? Write to us at hello@stepsprocess.com</p>
+
+    </form>
   </div>
 </section>
 
@@ -1136,4 +1239,4 @@
 <footer>
   <div class="footer-brand">
     <img src="images/logo.png" alt="STEPS" style="height:56px; width:56px; object-fit:contain; display:block; margin-bottom:4px;">
-    <span style="display:block; font-family:'DM Sans',sans-serif; font-weight:300; font-size:11px; letter-spacing:0.08em; color:var(--mid); margin-top:4px; text-tr
+    <span style="display:block; font-family:'DM Sans',sans-serif; font-weight:300; font-size:11px; letter-spacing:0.08
