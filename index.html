@@ -285,14 +285,11 @@
 
   /* ── WHAT IS STEPS ── */
   .what {
-    padding: 100px 64px;
+    padding: 100px 64px 60px;
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
   }
+  .what > div { max-width: 760px; }
 
   .section-label {
     font-family: 'Syne', sans-serif;
@@ -468,6 +465,36 @@
     color: #3a3835;
     line-height: 1.7;
   }
+
+  /* ── OUTCOMES ── */
+  .outcomes { background: var(--black); padding: 100px 64px; }
+  .outcomes-inner { max-width: 1200px; margin: 0 auto; }
+  .outcomes-header { margin-bottom: 56px; }
+  .outcomes-title {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: clamp(28px, 3vw, 40px); color: var(--white); line-height: 1.15;
+  }
+  .outcome-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px 64px; }
+  .outcome-item { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start; }
+  .outcome-num {
+    font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800;
+    color: var(--red); line-height: 1.2;
+    font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1;
+  }
+  .outcome-title {
+    font-family: 'Syne', sans-serif; font-weight: 600; font-size: 20px;
+    color: var(--white); margin-bottom: 10px; line-height: 1.25;
+  }
+  .outcome-body { font-size: 14px; color: var(--mid); line-height: 1.7; }
+
+  /* ── MATS ── */
+  .mats { padding: 0 64px 100px; max-width: 1200px; margin: 0 auto; }
+  .mats-header { margin-bottom: 40px; }
+  .mat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .mat-grid a { display: block; overflow: hidden; background: var(--sand); border: 1px solid var(--light); }
+  .mat-grid img { width: 100%; display: block; transition: transform 0.3s; }
+  .mat-grid a:hover img { transform: scale(1.03); }
+  .mat-caption { margin-top: 20px; font-size: 12px; color: var(--mid); line-height: 1.6; max-width: 640px; }
 
   /* ── RESULTS ── */
   .results {
@@ -838,6 +865,9 @@
     .how-header { flex-direction: column; align-items: flex-start; gap: 16px; }
     .how-desc { text-align: left; }
     .steps-grid, .stats-row { grid-template-columns: 1fr; }
+    .outcomes, .mats { padding-left: 32px; padding-right: 32px; }
+    .outcome-grid { grid-template-columns: 1fr; gap: 36px; }
+    .mat-grid { grid-template-columns: 1fr; }
     .photo-strip { grid-template-columns: 1fr; }
     .quote-context { position: static; text-align: left; margin-top: 24px; }
     footer { flex-direction: column; gap: 24px; text-align: center; }
@@ -889,7 +919,7 @@
         <em>Consistent execution</em><br>doesn't.
       </h1>
       <p class="hero-sub">
-        STEPS is a structured training system that surfaces how differently people interpret the same procedure — and builds the shared understanding to fix it.
+        STEPS closes the gap between how a procedure is written and how it actually gets done. Teams work through your real procedures together and leave aligned on who does what, and when.
       </p>
     </div>
     <div class="hero-cta">
@@ -900,36 +930,8 @@
   <div class="hero-right">
     <p class="problem-label">Where execution erodes</p>
 
-    <div class="problem-item">
-      <span class="problem-num">01</span>
-      <div class="problem-text">
-        <strong>Invisible interpretation gaps</strong>
-        <p>Team members read the same procedure and reach different conclusions about who does what — and when.</p>
-      </div>
-    </div>
-
-    <div class="problem-item">
-      <span class="problem-num">02</span>
-      <div class="problem-text">
-        <strong>High-stakes situations practiced only when it's too late</strong>
-        <p>High-stakes, low-frequency scenarios are the ones that cause failures. They're also the ones teams are least prepared for.</p>
-      </div>
-    </div>
-
-    <div class="problem-item">
-      <span class="problem-num">03</span>
-      <div class="problem-text">
-        <strong>Some people miss the update</strong>
-        <p>Procedure changes reach people at different times, through different channels, with different levels of attention.</p>
-      </div>
-    </div>
-
-    <div class="problem-item">
-      <span class="problem-num">04</span>
-      <div class="problem-text">
-        <strong>Documentation and practice diverge</strong>
-        <p>Over time, what people actually do gradually departs from what the procedure says they should do.</p>
-      </div>
+    <div class="problem-text">
+      <p>Team members read the same procedure and reach different conclusions about who does what. Procedure changes reach people at different times, through different channels, with different levels of attention. The situations that cause real failures are the rare ones, which are also the ones teams have practised least. Over time, what people do drifts from what the document says.</p>
     </div>
   </div>
 </section>
@@ -954,6 +956,48 @@
 </div>
 
 <!-- ══════════════════════════════════════
+     RESULTS STEPS CREATES
+     ══════════════════════════════════════ -->
+<section class="outcomes">
+  <div class="outcomes-inner">
+    <div class="outcomes-header">
+      <p class="section-label" style="color: var(--red);">Results STEPS Creates</p>
+      <h2 class="outcomes-title">What changes after a session</h2>
+    </div>
+    <div class="outcome-grid">
+      <div class="outcome-item">
+        <span class="outcome-num">1</span>
+        <div>
+          <h3 class="outcome-title">Time-to-competence shortened</h3>
+          <p class="outcome-body">The gap between onboarding and other trainings and doing the procedure unsupervised gets shorter.</p>
+        </div>
+      </div>
+      <div class="outcome-item">
+        <span class="outcome-num">2</span>
+        <div>
+          <h3 class="outcome-title">New equipment and procedures adopted faster</h3>
+          <p class="outcome-body">New machinery and equipment mean new procedures, which are often trained in a vacuum. STEPS helps anchor safe and efficient usage across roles for new and existing procedures.</p>
+        </div>
+      </div>
+      <div class="outcome-item">
+        <span class="outcome-num">3</span>
+        <div>
+          <h3 class="outcome-title">Execution aligned across roles</h3>
+          <p class="outcome-body">The team works through the procedure together and walks out agreeing on who does what and when.</p>
+        </div>
+      </div>
+      <div class="outcome-item">
+        <span class="outcome-num">4</span>
+        <div>
+          <h3 class="outcome-title">Mistakes surfaced before they have real consequences</h3>
+          <p class="outcome-body">Rare, high-stakes situations get rehearsed in a low-pressure setting, so the team has handled it before it counts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
      WHAT IS STEPS
      Left: explanation text
      Right: feature list + hero photo
@@ -963,62 +1007,38 @@
     <p class="section-label">What is STEPS</p>
     <h2 class="section-title">A procedure training system your team can run on demand</h2>
     <p class="section-body">
-      STEPS is a self-facilitated physical board game with digital features that lets your team members play through scenarios and align on who does what, when — and understand not just the <em>how</em>, but also the <em>why</em>.
+      STEPS is a self-facilitated physical board game built around your procedures. Your team plays through real scenarios, aligns on who does what and when, and understands the <em>why</em> behind the <em>how</em>.
     </p>
     <p class="section-body">
-      It is not a PowerPoint presentation. It is not e-learning. It is a custom-built training tool designed around your actual procedures, your roles, and your operational context — creating shared understanding across roles and teams that documentation alone cannot produce.
+      It is not a PowerPoint presentation. It is not e-learning. It is a custom-built training tool designed around your actual procedures and verified with your own experts. It produces shared understanding across roles that documentation on its own cannot.
     </p>
     <p class="section-body">
       We build it with you. Your facilitators can run it indefinitely.
     </p>
     <p class="section-body">
-      Each session generates data. A dashboard highlights recurring knowledge gaps and alignment trends — giving you evidence for targeted reinforcement, audit documentation, and process refinement.
+      Sessions can be extended with a digital layer that captures where knowledge gaps recur across teams.
     </p>
 
   </div>
 
-  <div class="what-features">
-    <div class="feature-row">
-      <div class="feature-icon">
-        <svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="var(--red)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="feature-text">
-        <strong>Clarify roles and handovers</strong>
-        <p>Who does what, and when, becomes explicit — not assumed.</p>
-      </div>
-    </div>
-    <div class="feature-row">
-      <div class="feature-icon">
-        <svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="var(--red)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="feature-text">
-        <strong>Surface interdependencies</strong>
-        <p>Teams see how their decisions affect adjacent roles in real time.</p>
-      </div>
-    </div>
-    <div class="feature-row">
-      <div class="feature-icon">
-        <svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="var(--red)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="feature-text">
-        <strong>Practise critical decisions</strong>
-        <p>High-stakes, low-frequency situations are rehearsed before they happen — not after.</p>
-      </div>
-    </div>
-    <div class="feature-row">
-      <div class="feature-icon">
-        <svg viewBox="0 0 16 16"><path d="M2 8l4 4 8-8" stroke="var(--red)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="feature-text">
-        <strong>Capture procedure gaps</strong>
-        <p>Interpretation differences that aren't in the official procedure get captured and acted on.</p>
-      </div>
-    </div>
-
-  </div>
-
-
 </section>
+
+<!-- ══════════════════════════════════════
+     YOUR OPERATION, ON THE TABLE
+     ══════════════════════════════════════ -->
+<div class="mats">
+  <div class="mats-header">
+    <p class="section-label">Custom Made</p>
+    <h2 class="section-title">Your operation, on the table.</h2>
+    <p class="section-body" style="margin-top:16px;">Every scenario comes from your world. That is why it works.</p>
+  </div>
+  <div class="mat-grid">
+    <a href="images/mat-pitstop.png" target="_blank"><img src="images/mat-pitstop.png" alt="Pit stop process board"></a>
+    <a href="images/mat-aviation.png" target="_blank"><img src="images/mat-aviation.png" alt="Airport ground handling process board"></a>
+    <a href="images/mat-port.png" target="_blank"><img src="images/mat-port.png" alt="Port logistics process board"></a>
+  </div>
+  <p class="mat-caption">Example boards showing the format across different industries. Every client system is built from that client's own procedures.</p>
+</div>
 
 <!-- ══════════════════════════════════════
      IN ACTION — 2x2 PHOTO GRID
@@ -1096,7 +1116,6 @@
   </div>
 
 </section>
-</section>
 
 <!-- ══════════════════════════════════════
      TEAM
@@ -1112,7 +1131,7 @@
         We are two strategic design consultants who built and validated STEPS from the inside — embedded in one of the world's most complex offshore operations. We know what procedural misalignment costs because we've seen it at scale.
       </p>
       <p class="section-body" style="color: var(--light);">
-        We don't sell off-the-shelf training. We design systems that fit your operational reality and leave your organisation with lasting internal capability.
+        Every system we design fits the operation it is built for and leaves the organisation with lasting internal capability.
       </p>
 
       <img src="images/viktor-turbine.jpg" style="width:100%; height:320px; object-fit:cover; object-position:center 60%; margin-top:40px; display:block;" alt="Viktor at offshore wind turbine">
@@ -1170,7 +1189,7 @@
 <section class="who-for-section" style="padding: 100px 64px; background: var(--white);">
   <div class="who-for-inner" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;">
     <div>
-      <p class="section-label">Who This Is For</p>
+      <p class="section-label">Where STEPS Works Best</p>
       <h2 class="section-title" style="color:var(--black);">Built for industries where precision is non-negotiable</h2>
       <p class="section-body" style="color:#3a3835;">STEPS works best where the gap between what the procedure says and what people actually do carries real consequences.</p>
     </div>
@@ -1194,7 +1213,7 @@
         <div>
           <strong style="font-family:'Syne',sans-serif; font-size:14px; display:block; margin-bottom:4px; color:var(--black);">Procedures that don't stick</strong>
           <span style="font-size:13px; color:#3a3835;">Technology, structure, resources — many things break procedures. STEPS focuses on the gap between what the process says and what each person believes it means.</span>
-          <span style="font-size:13px; color:var(--mid); display:block; margin-top:10px; font-style:italic;">Particularly effective for induction — when new employees are building their mental model of your procedures for the first time.</span>
+          <span style="font-size:13px; color:var(--mid); display:block; margin-top:10px; font-style:italic;">Particularly effective for onboarding, when new employees are building their mental model of your procedures for the first time.</span>
         </div>
       </div>
     </div>
@@ -1241,10 +1260,17 @@
 </section>
 
 <!-- FOOTER -->
-<!-- FOOTER -->
-<!-- FOOTER -->
-<!-- FOOTER -->
 <footer>
   <div class="footer-brand">
     <img src="images/logo.png" alt="STEPS" style="height:56px; width:56px; object-fit:contain; display:block; margin-bottom:4px;">
-    <span style="display:block; font-family:'DM Sans',sans-serif; font-weight:300; font-size:11px; letter-spacing:0.08
+    <span style="display:block; font-family:'DM Sans',sans-serif; font-weight:300; font-size:11px; letter-spacing:0.08em; color:var(--mid);">stepsprocess.com</span>
+  </div>
+  <div class="footer-contact">
+    <a href="mailto:hello@stepsprocess.com">hello@stepsprocess.com</a>
+    <a href="https://www.linkedin.com/in/viktorberegszaszi/" target="_blank" rel="noopener">Viktor on LinkedIn</a>
+    <a href="https://www.linkedin.com/in/tobias-juul-broegger-jensen/" target="_blank" rel="noopener">Tobias on LinkedIn</a>
+  </div>
+</footer>
+
+</body>
+</html>
