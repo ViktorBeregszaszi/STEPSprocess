@@ -272,9 +272,9 @@
   }
 
   .problem-text p {
-    font-size: clamp(16px, 1.15vw, 18px);
+    font-size: clamp(14px, 1vw, 16px);
     color: #3a3835;
-    line-height: 1.8;
+    line-height: 1.65;
   }
 
   /* ── VIDEO BANNER ── */
@@ -491,15 +491,6 @@
   .outcome-body { font-size: 15px; color: #3a3835; line-height: 1.75; }
 
   /* ── MATS ── */
-  .mats-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    color: var(--black);
-    line-height: 1.2;
-    margin-bottom: 8px;
-  }
-  .mats-sub { font-size: 15px; color: #3a3835; line-height: 1.7; margin-bottom: 24px; }
   .mat-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
   .mat-grid a { display: block; overflow: hidden; background: var(--sand); border: 1px solid var(--light); }
   .mat-grid img { width: 100%; display: block; transition: transform 0.3s; }
@@ -939,8 +930,36 @@
   <div class="hero-right">
     <p class="problem-label">Where execution erodes</p>
 
-    <div class="problem-text">
-      <p>Team members read the same procedure and reach different conclusions about who does what. Procedure changes reach people at different times, through different channels, with different levels of attention. The situations that cause real failures are the rare ones, which are also the ones teams have practised least. Over time, what people do drifts from what the document says.</p>
+    <div class="problem-item">
+      <span class="problem-num">01</span>
+      <div class="problem-text">
+        <strong>Invisible interpretation gaps</strong>
+        <p>Team members read the same procedure and reach different conclusions about who does what, and when.</p>
+      </div>
+    </div>
+
+    <div class="problem-item">
+      <span class="problem-num">02</span>
+      <div class="problem-text">
+        <strong>High-stakes situations practised only when it's too late</strong>
+        <p>High-stakes, low-frequency scenarios are the ones that cause failures. They're also the ones teams are least prepared for.</p>
+      </div>
+    </div>
+
+    <div class="problem-item">
+      <span class="problem-num">03</span>
+      <div class="problem-text">
+        <strong>Some people miss the update</strong>
+        <p>Procedure changes reach people at different times, through different channels, with different levels of attention.</p>
+      </div>
+    </div>
+
+    <div class="problem-item">
+      <span class="problem-num">04</span>
+      <div class="problem-text">
+        <strong>Documentation and practice diverge</strong>
+        <p>Over time, what people actually do gradually departs from what the procedure says they should do.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1031,11 +1050,7 @@
   </div>
 
   <div>
-    <p class="section-label">Custom Made</p>
-    <h3 class="mats-title">Your operation, on the table.</h3>
-    <p class="mats-sub">Every scenario comes from your world. That is why it works.</p>
     <div class="mat-grid">
-      <a href="images/mat-pitstop.png" target="_blank"><img src="images/mat-pitstop.png" alt="Pit stop process board"></a>
       <a href="images/mat-aviation.png" target="_blank"><img src="images/mat-aviation.png" alt="Airport ground handling process board"></a>
       <a href="images/mat-port.png" target="_blank"><img src="images/mat-port.png" alt="Port logistics process board"></a>
     </div>
