@@ -141,7 +141,8 @@
     padding: 72px 64px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 64px;
     position: relative;
   }
 
@@ -230,10 +231,12 @@
 
   .hero-right {
     background: var(--white);
-    padding: 72px 64px;
+    /* top padding = hero-left padding + logo height + gap, so the label
+       lines up with the top of the headline */
+    padding: 208px 64px 72px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
   }
 
@@ -289,7 +292,10 @@
 
   /* ── WHAT IS STEPS ── */
   .what {
+    background: var(--sand);
     padding: 100px 64px;
+  }
+  .what-inner {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
@@ -474,7 +480,7 @@
   }
 
   /* ── OUTCOMES ── */
-  .outcomes { background: var(--sand); padding: 100px 64px; }
+  .outcomes { background: var(--white); padding: 100px 64px; }
   .outcomes-inner { max-width: 1200px; margin: 0 auto; }
   .outcomes-header { margin-bottom: 56px; }
   .outcomes-title {
@@ -652,12 +658,12 @@
   }
 
   .diagnostic-inner {
-    max-width: 1200px;
+    max-width: 1080px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
+    grid-template-columns: 1fr minmax(320px, 420px);
+    gap: 72px;
+    align-items: start;
   }
 
   .diagnostic-title {
@@ -858,7 +864,7 @@
   }
 
   @media (max-width: 900px) {
-    .hero, .what, .team-inner, .diagnostic-inner { grid-template-columns: 1fr; }
+    .hero, .what-inner, .team-inner, .diagnostic-inner { grid-template-columns: 1fr; }
     .hero-left::after { display: none; }
     .hero-left, .hero-right, .what, .how, .results,
     .team, .diagnostic { padding: 64px 32px; }
@@ -884,7 +890,7 @@
 
   @media (max-width: 1300px) and (min-width: 901px) {
     .hero { min-height: auto; }
-    .hero-left { padding: 48px 48px; }
+    .hero-left { padding: 48px 48px; gap: 40px; }
     .hero-right { padding: 48px 48px; }
     .hero-headline { font-size: clamp(36px, 4vw, 56px); }
     .hero-sub { font-size: 15px; }
@@ -959,6 +965,7 @@
      WHAT IT IS
      ══════════════════════════════════════ -->
 <section class="what">
+  <div class="what-inner">
   <div>
     <p class="section-label">What is STEPS Discover</p>
     <h2 class="section-title">A physical workshop for mapping operational reality</h2>
@@ -979,6 +986,7 @@
       <a href="../images/session-hands.jpg" target="_blank"><img src="../images/session-hands.jpg" alt="Hands on the map"></a>
     </div>
     <p class="mat-caption">Sessions run at your site, around one table, with the people who do the work.</p>
+  </div>
   </div>
 </section>
 
@@ -1027,7 +1035,8 @@
 <!-- ══════════════════════════════════════
      AFTER THE SESSION
      ══════════════════════════════════════ -->
-<section class="what" style="padding-top:0;">
+<section class="what">
+  <div class="what-inner">
   <div>
     <p class="section-label">After the Session</p>
     <h2 class="section-title">The map is the start, not the deliverable</h2>
@@ -1047,6 +1056,7 @@
     <p class="section-body">
       <a href="../" style="color:var(--red); text-decoration:none; border-bottom:1px solid var(--red);">See the STEPS system →</a>
     </p>
+  </div>
   </div>
 </section>
 
