@@ -662,6 +662,8 @@
     gap: 80px;
     align-items: center;
   }
+  /* stop a long heading from forcing its column wider than half */
+  .diagnostic-inner > * { min-width: 0; }
 
   .diagnostic-title {
     font-family: 'Syne', sans-serif;
@@ -1195,7 +1197,7 @@
 <section class="diagnostic" id="diagnostic">
   <div class="diagnostic-inner">
     <div>
-      <h2 class="diagnostic-title">Book a Discover session.</h2>
+      <h2 class="diagnostic-title">Book a Discover<br>session.</h2>
       <p class="diagnostic-sub">At your site. One real process.</p>
       <p class="diagnostic-sub" style="margin-top: 24px;">Tell us roughly what you would want to map and we will come back with how a session would work for your team.</p>
     </div>
