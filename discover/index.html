@@ -141,8 +141,7 @@
     padding: 72px 64px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 64px;
+    justify-content: space-between;
     position: relative;
   }
 
@@ -231,12 +230,10 @@
 
   .hero-right {
     background: var(--white);
-    /* top padding = hero-left padding + logo height + gap, so the label
-       lines up with the top of the headline */
-    padding: 208px 64px 72px;
+    padding: 72px 64px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     position: relative;
   }
 
@@ -658,12 +655,12 @@
   }
 
   .diagnostic-inner {
-    max-width: 1080px;
+    max-width: 1000px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr minmax(320px, 420px);
-    gap: 72px;
-    align-items: start;
+    grid-template-columns: 1fr 380px;
+    gap: 64px;
+    align-items: center;
   }
 
   .diagnostic-title {
@@ -890,7 +887,7 @@
 
   @media (max-width: 1300px) and (min-width: 901px) {
     .hero { min-height: auto; }
-    .hero-left { padding: 48px 48px; gap: 40px; }
+    .hero-left { padding: 48px 48px; }
     .hero-right { padding: 48px 48px; }
     .hero-headline { font-size: clamp(36px, 4vw, 56px); }
     .hero-sub { font-size: 15px; }
@@ -982,7 +979,6 @@
 
   <div>
     <div class="mat-grid">
-      <a href="../images/session-group.jpg" target="_blank"><img src="../images/session-group.jpg" alt="Team mapping a process together"></a>
       <a href="../images/session-hands.jpg" target="_blank"><img src="../images/session-hands.jpg" alt="Hands on the map"></a>
     </div>
     <p class="mat-caption">Sessions run at your site, around one table, with the people who do the work.</p>
