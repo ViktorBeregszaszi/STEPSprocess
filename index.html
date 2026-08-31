@@ -478,12 +478,9 @@
     font-size: clamp(28px, 3vw, 40px); color: var(--black); line-height: 1.15;
   }
   .outcome-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px 64px; }
-  .outcome-item { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start; }
-  .outcome-num {
-    font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800;
-    color: var(--red); line-height: 1.2;
-    font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1;
-  }
+  .outcome-item { display: grid; grid-template-columns: 30px 1fr; gap: 18px; align-items: start; }
+  .outcome-tick { width: 26px; height: 26px; margin-top: 1px; flex-shrink: 0; }
+  .outcome-tick svg { width: 100%; height: 100%; display: block; }
   .outcome-title {
     font-family: 'Syne', sans-serif; font-weight: 600; font-size: 20px;
     color: var(--black); margin-bottom: 10px; line-height: 1.25;
@@ -994,28 +991,28 @@
     </div>
     <div class="outcome-grid">
       <div class="outcome-item">
-        <span class="outcome-num">1</span>
+        <span class="outcome-tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8l4 4 8-8" stroke="var(--red)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <div>
           <h3 class="outcome-title">Time-to-competence shortened</h3>
           <p class="outcome-body">The gap between onboarding and other trainings and doing the procedure unsupervised gets shorter.</p>
         </div>
       </div>
       <div class="outcome-item">
-        <span class="outcome-num">2</span>
+        <span class="outcome-tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8l4 4 8-8" stroke="var(--red)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <div>
           <h3 class="outcome-title">New equipment and procedures adopted faster</h3>
           <p class="outcome-body">New machinery and equipment mean new procedures, which are often trained in a vacuum. STEPS helps anchor safe and efficient usage across roles for new and existing procedures.</p>
         </div>
       </div>
       <div class="outcome-item">
-        <span class="outcome-num">3</span>
+        <span class="outcome-tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8l4 4 8-8" stroke="var(--red)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <div>
           <h3 class="outcome-title">Execution aligned across roles</h3>
           <p class="outcome-body">The team works through the procedure together and walks out agreeing on who does what and when.</p>
         </div>
       </div>
       <div class="outcome-item">
-        <span class="outcome-num">4</span>
+        <span class="outcome-tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8l4 4 8-8" stroke="var(--red)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <div>
           <h3 class="outcome-title">Mistakes surfaced before they have real consequences</h3>
           <p class="outcome-body">Rare, high-stakes situations get rehearsed in a low-pressure setting, so the team has handled it before it counts.</p>
