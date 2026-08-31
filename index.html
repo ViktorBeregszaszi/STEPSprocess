@@ -272,9 +272,9 @@
   }
 
   .problem-text p {
-    font-size: clamp(14px, 1vw, 16px);
+    font-size: clamp(16px, 1.15vw, 18px);
     color: #3a3835;
-    line-height: 1.6;
+    line-height: 1.8;
   }
 
   /* ── VIDEO BANNER ── */
@@ -285,11 +285,14 @@
 
   /* ── WHAT IS STEPS ── */
   .what {
-    padding: 100px 64px 60px;
+    padding: 100px 64px;
     max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 72px;
+    align-items: start;
   }
-  .what > div { max-width: 760px; }
 
   .section-label {
     font-family: 'Syne', sans-serif;
@@ -461,18 +464,18 @@
   }
 
   .step-body {
-    font-size: 13px;
-    color: #3a3835;
-    line-height: 1.7;
+    font-size: 14.5px;
+    color: #33312e;
+    line-height: 1.75;
   }
 
   /* ── OUTCOMES ── */
-  .outcomes { background: var(--black); padding: 100px 64px; }
+  .outcomes { background: var(--sand); padding: 100px 64px; }
   .outcomes-inner { max-width: 1200px; margin: 0 auto; }
   .outcomes-header { margin-bottom: 56px; }
   .outcomes-title {
     font-family: 'Syne', sans-serif; font-weight: 700;
-    font-size: clamp(28px, 3vw, 40px); color: var(--white); line-height: 1.15;
+    font-size: clamp(28px, 3vw, 40px); color: var(--black); line-height: 1.15;
   }
   .outcome-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px 64px; }
   .outcome-item { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start; }
@@ -483,18 +486,25 @@
   }
   .outcome-title {
     font-family: 'Syne', sans-serif; font-weight: 600; font-size: 20px;
-    color: var(--white); margin-bottom: 10px; line-height: 1.25;
+    color: var(--black); margin-bottom: 10px; line-height: 1.25;
   }
-  .outcome-body { font-size: 14px; color: var(--mid); line-height: 1.7; }
+  .outcome-body { font-size: 15px; color: #3a3835; line-height: 1.75; }
 
   /* ── MATS ── */
-  .mats { padding: 0 64px 100px; max-width: 1200px; margin: 0 auto; }
-  .mats-header { margin-bottom: 40px; }
-  .mat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .mats-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--black);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .mats-sub { font-size: 15px; color: #3a3835; line-height: 1.7; margin-bottom: 24px; }
+  .mat-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
   .mat-grid a { display: block; overflow: hidden; background: var(--sand); border: 1px solid var(--light); }
   .mat-grid img { width: 100%; display: block; transition: transform 0.3s; }
   .mat-grid a:hover img { transform: scale(1.03); }
-  .mat-caption { margin-top: 20px; font-size: 12px; color: var(--mid); line-height: 1.6; max-width: 640px; }
+  .mat-caption { margin-top: 16px; font-size: 13px; color: #4a4540; line-height: 1.6; }
 
   /* ── RESULTS ── */
   .results {
@@ -534,9 +544,9 @@
   }
 
   .stat-label {
-    font-size: 13px;
-    color: var(--mid);
-    line-height: 1.5;
+    font-size: 14.5px;
+    color: #33312e;
+    line-height: 1.6;
   }
 
   .quote-block {
@@ -865,9 +875,8 @@
     .how-header { flex-direction: column; align-items: flex-start; gap: 16px; }
     .how-desc { text-align: left; }
     .steps-grid, .stats-row { grid-template-columns: 1fr; }
-    .outcomes, .mats { padding-left: 32px; padding-right: 32px; }
+    .outcomes { padding-left: 32px; padding-right: 32px; }
     .outcome-grid { grid-template-columns: 1fr; gap: 36px; }
-    .mat-grid { grid-template-columns: 1fr; }
     .photo-strip { grid-template-columns: 1fr; }
     .quote-context { position: static; text-align: left; margin-top: 24px; }
     footer { flex-direction: column; gap: 24px; text-align: center; }
@@ -1021,24 +1030,19 @@
 
   </div>
 
-</section>
-
-<!-- ══════════════════════════════════════
-     YOUR OPERATION, ON THE TABLE
-     ══════════════════════════════════════ -->
-<div class="mats">
-  <div class="mats-header">
+  <div>
     <p class="section-label">Custom Made</p>
-    <h2 class="section-title">Your operation, on the table.</h2>
-    <p class="section-body" style="margin-top:16px;">Every scenario comes from your world. That is why it works.</p>
+    <h3 class="mats-title">Your operation, on the table.</h3>
+    <p class="mats-sub">Every scenario comes from your world. That is why it works.</p>
+    <div class="mat-grid">
+      <a href="images/mat-pitstop.png" target="_blank"><img src="images/mat-pitstop.png" alt="Pit stop process board"></a>
+      <a href="images/mat-aviation.png" target="_blank"><img src="images/mat-aviation.png" alt="Airport ground handling process board"></a>
+      <a href="images/mat-port.png" target="_blank"><img src="images/mat-port.png" alt="Port logistics process board"></a>
+    </div>
+    <p class="mat-caption">Example boards showing the format across different industries. Every client system is built from that client's own procedures.</p>
   </div>
-  <div class="mat-grid">
-    <a href="images/mat-pitstop.png" target="_blank"><img src="images/mat-pitstop.png" alt="Pit stop process board"></a>
-    <a href="images/mat-aviation.png" target="_blank"><img src="images/mat-aviation.png" alt="Airport ground handling process board"></a>
-    <a href="images/mat-port.png" target="_blank"><img src="images/mat-port.png" alt="Port logistics process board"></a>
-  </div>
-  <p class="mat-caption">Example boards showing the format across different industries. Every client system is built from that client's own procedures.</p>
-</div>
+
+</section>
 
 <!-- ══════════════════════════════════════
      IN ACTION — 2x2 PHOTO GRID
